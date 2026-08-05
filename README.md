@@ -90,7 +90,7 @@ Winner of three innovation competitions (WTF 2024, ANVESHNA, Invest(AI)Q), with 
 - 💾 PostgreSQL persistence layer for project metadata and deployment history
 - 📝 Build/deployment logging system planned per release
 
-[![CloudX](https://img.shields.io/badge/View_Project-8b5cf6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vkmnamit/cloudx)
+[![CloudX](https://img.shields.io/badge/View_Project-8b5cf6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vkmnamit/cloudx.git)
 
 ---
 
