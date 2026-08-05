@@ -275,10 +275,7 @@ Winner of three innovation competitions (WTF 2024, ANVESHNA, Invest(AI)Q), with 
 
 <div align="center">
 
-<!-- Trophy Section -->
-<a href="https://github.com/vkmnamit">
-  <img src="https://github-profile-trophy.vercel.app/?username=vkmnamit&theme=dark&bg_color=0a0a0a&border_color=3b82f6&text_color=a0a0a0&title_color=8b5cf6&icon_color=3b82f6&no_frame=true&row=1&margin=15" alt="Trophies" />
-</a>
+
 
 </div>
 
@@ -330,7 +327,7 @@ I believe in:
 
 </div>
 
-<img src="assets/footer.svg" alt="footer" />
+
 
 ---
 
