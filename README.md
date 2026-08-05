@@ -66,7 +66,7 @@ Winner of three innovation competitions (WTF 2024, ANVESHNA, Invest(AI)Q), with 
 - 📱 SMS/email communication via Twilio and Resend
 - 🚀 Production deployment with Docker and Cloudflare
 
-[![Kautix](https://img.shields.io/badge/View_Project-3b82f6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vkmnamit/kautix)
+[![Kautix](https://img.shields.io/badge/View_Project-3b82f6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vkmnamit/school_operation_backend.git)
 
 ---
 
@@ -114,7 +114,7 @@ Winner of three innovation competitions (WTF 2024, ANVESHNA, Invest(AI)Q), with 
 - 💬 Integrated Qwen 2.5 LLM via Ollama for executive reports
 - 🔍 Validated feature drivers using SHAP for explainability
 
-[![AI Restaurant](https://img.shields.io/badge/View_Project-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vkmnamit/ai-restaurant-intelligence)
+
 
 ---
 
@@ -136,7 +136,7 @@ Winner of three innovation competitions (WTF 2024, ANVESHNA, Invest(AI)Q), with 
 - 🎨 Interactive 3D dashboard with Three.js
 - 📊 Real-time climate intelligence and metropolitan planning
 
-[![SUCI](https://img.shields.io/badge/View_Project-00ADD8?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vkmnamit/suci)
+[![SUCI](https://img.shields.io/badge/View_Project-00ADD8?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vkmnamit/suci.git)
 
 ---
 
@@ -159,7 +159,7 @@ Winner of three innovation competitions (WTF 2024, ANVESHNA, Invest(AI)Q), with 
 - 🔊 Sync-locked Edge-TTS narration
 - 📱 Native 9:16 Shorts-optimized layout engine
 
-[![Aetheris](https://img.shields.io/badge/View_Project-FF4500?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vkmnamit/aetheris)
+[![Aetheris](https://img.shields.io/badge/View_Project-FF4500?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vkmnamit/Aetheris.git)
 
 <img src="assets/divider.svg" alt="divider" />
 
