@@ -227,60 +227,6 @@ Winner of three innovation competitions (WTF 2024, ANVESHNA, Invest(AI)Q), with 
 
 <img src="assets/divider.svg" alt="divider" />
 
-## GitHub Stats
-
-<div align="center">
-
-<!-- GitHub Stats -->
-<a href="https://github.com/vkmnamit">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=vkmnamit&show_icons=true&theme=dark&hide_border=true&bg_color=0a0a0a&title_color=3b82f6&icon_color=8b5cf6&text_color=a0a0a0" alt="GitHub Stats" />
-</a>
-
-<a href="https://github.com/vkmnamit">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vkmnamit&layout=compact&theme=dark&hide_border=true&bg_color=0a0a0a&title_color=3b82f6&text_color=a0a0a0" alt="Top Languages" />
-</a>
-
-</div>
-
-<div align="center">
-
-<!-- Streak Stats -->
-<a href="https://github.com/vkmnamit">
-  <img src="https://streak-stats.demolab.com/?user=vkmnamit&theme=dark&hide_border=true&background=0a0a0a&stroke=3b82f6&ring=8b5cf6&fire=FF4500&currStreakLabel=3b82f6" alt="GitHub Streak" />
-</a>
-
-</div>
-
-<div align="center">
-
-<!-- Activity Graph -->
-<a href="https://github.com/vkmnamit">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=vkmnamit&bg_color=0a0a0a&color=3b82f6&line=8b5cf6&point=3b82f6&area=true&hide_border=true" alt="Activity Graph" />
-</a>
-
-</div>
-
-<div align="center">
-
-<!-- Contribution Snake -->
-<a href="https://github.com/vkmnamit">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/vkmnamit/vkmnamit/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/vkmnamit/vkmnamit/output/github-contribution-grid-snake.svg">
-    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/vkmnamit/vkmnamit/output/github-contribution-grid-snake-dark.svg">
-  </picture>
-</a>
-
-</div>
-
-<div align="center">
-
-
-
-</div>
-
-<img src="assets/divider.svg" alt="divider" />
-
 ## Current Focus
 
 <div align="center">
