@@ -61,7 +61,7 @@ Winner of three innovation competitions (WTF 2024, ANVESHNA, Invest(AI)Q), with 
 
 - 🎯 Designed modular backend spanning Student, Teacher, Parent, Attendance, Examination, Fee, and Notification modules
 - 🔐 Implemented JWT-based authentication with RBAC and per-school data isolation
-- 📊 Processed 10,000+ production API requests with stable CPU utilization
+- 📊 Processed 4,00,000+ production API requests with stable CPU utilization
 - 🤖 Integrated AI-powered workflows and automated timetable generation
 - 📱 SMS/email communication via Twilio and Resend
 - 🚀 Production deployment with Docker and Cloudflare
