@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Data Deletion | Kautix</title>
+    <meta name="description" content="Data deletion and right to be forgotten for Kautix" />
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles/global.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <div id="root"></div>
+    <script src="/scripts/vw.js"></script>
+    <script type="text/javascript">
+        const e = React.createElement;
+        function Nav() {
+            return e('header', { className: 'sticky top-0 bg-white shadow-sm z-30' },
+                e('div', { className: 'max-w-6xl mx-auto px-6 py-4 flex items-center justify-between' },
+                    e('div', { className: 'flex items-center space-x-4' },
+                        e('a', { href: '/', 'className': 'text-2xl font-bold text-blue-600' }, 'Kautix'),
+                        e('nav', null,
+                            e('a', { href: '/privacy-policy', className: 'text-sm text-gray-600 hover:text-blue-600 px-3' }, 'Privacy'),
+                            e('a', { href: '/terms', className: 'text-sm text-gray-600 hover:text-blue-600 px-3' }, 'Terms'),
+                            e('a', { href: '/data-deletion', className: 'text-sm text-gray-600 hover:text-blue-600 px-3' }, 'Data Deletion')
+                        )
+                    ),
+                    e('div', null, e('a', { href: '/login', className: 'text-sm text-blue-600 hover:underline' }, 'Sign in'))
+                )
+            );
+        }
+
+        function Hero() {
+            return e('section', { className: 'bg-white py-12' },
+                e('div', { className: 'max-w-6xl mx-auto px-6' },
+                    e('div', { className: 'bg-white rounded-lg shadow p-8' },
+                        e('h1', { className: 'text-3xl font-extrabold text-gray-900 mb-2' }, 'Data Deletion'),
+                        e('p', { className: 'text-sm text-gray-600' }, 'Request deletion of personal data for accounts or records on Kautix.')
+                    )
+                )
+            );
+        }
+
+        function Content() {
+            function requestDeletion() {
+                window.location.href = 'mailto:support@kautix.in?subject=Data%20Deletion%20Request';
+            }
+
+            return e('main', { className: 'max-w-6xl mx-auto px-6 py-8' },
+                e('div', { className: 'grid gap-6' },
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h2', { className: 'text-xl font-semibold mb-2' }, 'How to request deletion'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Users may request deletion of their personal data. School administrators can delete accounts from the school dashboard. Parents and teachers may contact their school administrator. Schools may contact Kautix Support for complete deletion.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'What is deleted'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'On request we can delete personal identifiers (name, email, phone), user-generated content, and profile records. Some logs and anonymized analytics may be retained for legal or compliance purposes.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Retention period'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Deletion requests are processed within 30 days. Some backups may persist briefly; we will purge data from backups as soon as feasible.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Confirmation timeline'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'You will receive confirmation by email within 30 days when deletion is complete.')
+                    ),
+
+                    e('div', { className: 'flex items-center space-x-4' },
+                        e('button', { onClick: requestDeletion, className: 'px-5 py-3 bg-blue-600 text-white rounded-lg shadow' }, 'Request Data Deletion'),
+                        e('a', { href: 'mailto:hello@kautix.in', className: 'text-sm text-gray-600' }, 'hello@kautix.in')
+                    )
+                )
+            );
+        }
+
+        function Footer() {
+            return e('footer', { className: 'bg-white mt-12 border-t' },
+                e('div', { className: 'max-w-6xl mx-auto px-6 py-6 flex items-center justify-between' },
+                    e('div', null, e('span', { className: 'text-sm text-gray-600' }, '© ' + new Date().getFullYear() + ' Kautix')),
+                    e('div', null, e('a', { href: '/privacy-policy', className: 'text-sm text-gray-600 px-2' }, 'Privacy'), e('a', { href: '/terms', className: 'text-sm text-gray-600 px-2' }, 'Terms'))
+                )
+            );
+        }
+
+        function App() {
+            return e(React.Fragment, null, e(Nav()), e(Hero()), e(Content()), e(Footer()));
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(e(App));
+    </script>
+</body>
+
+</html>

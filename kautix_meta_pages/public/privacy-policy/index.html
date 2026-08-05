@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Privacy Policy | Kautix</title>
+    <meta name="description" content="Privacy Policy for Kautix — cloud-based school management system" />
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles/global.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <div id="root"></div>
+    <script src="/scripts/vw.js"></script>
+    <script type="text/javascript">
+        const e = React.createElement;
+        function Nav() {
+            return e('header', { className: 'sticky top-0 bg-white shadow-sm z-30' },
+                e('div', { className: 'max-w-6xl mx-auto px-6 py-4 flex items-center justify-between' },
+                    e('div', { className: 'flex items-center space-x-4' },
+                        e('a', { href: '/', 'className': 'text-2xl font-bold text-blue-600' }, 'Kautix'),
+                        e('nav', null,
+                            e('a', { href: '/privacy-policy', className: 'text-sm text-gray-600 hover:text-blue-600 px-3' }, 'Privacy'),
+                            e('a', { href: '/terms', className: 'text-sm text-gray-600 hover:text-blue-600 px-3' }, 'Terms'),
+                            e('a', { href: '/data-deletion', className: 'text-sm text-gray-600 hover:text-blue-600 px-3' }, 'Data Deletion')
+                        )
+                    ),
+                    e('div', null, e('a', { href: '/login', className: 'text-sm text-blue-600 hover:underline' }, 'Sign in'))
+                )
+            );
+        }
+
+        function Hero() {
+            return e('section', { className: 'bg-white py-12' },
+                e('div', { className: 'max-w-6xl mx-auto px-6' },
+                    e('div', { className: 'bg-white rounded-lg shadow p-8' },
+                        e('h1', { className: 'text-3xl font-extrabold text-gray-900 mb-2' }, 'Privacy Policy'),
+                        e('p', { className: 'text-sm text-gray-600' }, 'Effective date: July 20, 2026')
+                    )
+                )
+            );
+        }
+
+        function Content() {
+            return e('main', { className: 'max-w-6xl mx-auto px-6 py-8' },
+                e('div', { className: 'grid gap-6' },
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h2', { className: 'text-xl font-semibold mb-2' }, 'Introduction'),
+                        e('p', { className: 'text-sm text-gray-700' }, "Kautix is a cloud-based School Management System used by schools to manage students, teachers, parents, attendance, fees, examinations, assignments, communication, and analytics. We respect your privacy and are committed to protecting personal data.")
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Information we collect'),
+                        e('ul', { className: 'list-disc pl-5 text-sm text-gray-700' },
+                            e('li', null, e('strong', null, 'School information:'), ' name, address, contact, school preferences'),
+                            e('li', null, e('strong', null, 'Student information:'), ' name, admission number, roll number, attendance, exam results, class/section, profile photo'),
+                            e('li', null, e('strong', null, 'Parent information:'), ' name, contact, email, relationship to student'),
+                            e('li', null, e('strong', null, 'Teacher information:'), ' name, email, subjects, schedules'),
+                            e('li', null, e('strong', null, 'Contact information:'), ' messages, support tickets, emails'),
+                            e('li', null, e('strong', null, 'Usage analytics:'), ' page views, device/browser info, feature usage')
+                        )
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'How we use information'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'To provide and improve services, authenticate users, communicate with schools and parents, analyze usage, secure the platform, and comply with legal obligations.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Data security'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'We implement administrative, technical, and physical safeguards including encryption at rest and in transit, access controls, and regular security reviews.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Data sharing policy'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'We share data only with service providers and partners needed to operate the platform. We do not sell personal data.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Cookies'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'We use cookies and similar technologies to operate the site, provide features, and analyze usage. You can control cookies via browser settings.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Third-party services'),
+                        e('ul', { className: 'list-disc pl-5 text-sm text-gray-700' },
+                            e('li', null, 'Meta WhatsApp Business Platform — used for messaging and notifications.'),
+                            e('li', null, 'Amazon Web Services — hosting and storage.'),
+                            e('li', null, 'Supabase — database and auth.'),
+                            e('li', null, 'Railway — deployment.'),
+                            e('li', null, 'Cloudflare — CDN and DDoS protection.')
+                        )
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'User rights'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Access, correction, deletion, restriction, portability, and the right to object. To exercise rights contact us at '),
+                        e('p', null, e('a', { href: 'mailto:support@kautix.in', className: 'text-blue-600' }, 'support@kautix.in'))
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Children\'s privacy'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'We take special care to protect children\'s information. Schools configure access for parents and teachers. For concerns contact support.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Data retention'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'We retain data as necessary for the purposes described and as required by law. Schools can request deletion; see our Data Deletion page.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Updates to this policy'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'We may update this policy. Material changes will be communicated and the effective date updated.')
+                    )
+                )
+            );
+        }
+
+        function Footer() {
+            return e('footer', { className: 'bg-white mt-12 border-t' },
+                e('div', { className: 'max-w-6xl mx-auto px-6 py-6 flex items-center justify-between' },
+                    e('div', null, e('span', { className: 'text-sm text-gray-600' }, '© ' + new Date().getFullYear() + ' Kautix')),
+                    e('div', null, e('a', { href: '/privacy-policy', className: 'text-sm text-gray-600 px-2' }, 'Privacy'), e('a', { href: '/terms', className: 'text-sm text-gray-600 px-2' }, 'Terms'))
+                )
+            );
+        }
+
+        function App() {
+            return e(React.Fragment, null, e(Nav()), e(Hero()), e(Content()), e(Footer()));
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(e(App));
+    </script>
+</body>
+
+</html>

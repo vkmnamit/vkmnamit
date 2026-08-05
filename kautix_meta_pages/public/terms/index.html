@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Terms & Conditions | Kautix</title>
+    <meta name="description" content="Terms & Conditions for Kautix — cloud-based school management system" />
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles/global.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <div id="root"></div>
+    <script src="/scripts/vw.js"></script>
+    <script type="text/javascript">
+        const e = React.createElement;
+        function Nav() {
+            return e('header', { className: 'sticky top-0 bg-white shadow-sm z-30' },
+                e('div', { className: 'max-w-6xl mx-auto px-6 py-4 flex items-center justify-between' },
+                    e('div', { className: 'flex items-center space-x-4' },
+                        e('a', { href: '/', 'className': 'text-2xl font-bold text-blue-600' }, 'Kautix'),
+                        e('nav', null,
+                            e('a', { href: '/privacy-policy', className: 'text-sm text-gray-600 hover:text-blue-600 px-3' }, 'Privacy'),
+                            e('a', { href: '/terms', className: 'text-sm text-gray-600 hover:text-blue-600 px-3' }, 'Terms'),
+                            e('a', { href: '/data-deletion', className: 'text-sm text-gray-600 hover:text-blue-600 px-3' }, 'Data Deletion')
+                        )
+                    ),
+                    e('div', null, e('a', { href: '/login', className: 'text-sm text-blue-600 hover:underline' }, 'Sign in'))
+                )
+            );
+        }
+
+        function Hero() {
+            return e('section', { className: 'bg-white py-12' },
+                e('div', { className: 'max-w-6xl mx-auto px-6' },
+                    e('div', { className: 'bg-white rounded-lg shadow p-8' },
+                        e('h1', { className: 'text-3xl font-extrabold text-gray-900 mb-2' }, 'Terms & Conditions'),
+                        e('p', { className: 'text-sm text-gray-600' }, 'Last updated: July 20, 2026')
+                    )
+                )
+            );
+        }
+
+        function Content() {
+            return e('main', { className: 'max-w-6xl mx-auto px-6 py-8' },
+                e('div', { className: 'grid gap-6' },
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h2', { className: 'text-xl font-semibold mb-2' }, 'Acceptance of Terms'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'By using Kautix you agree to these Terms & Conditions. If you do not agree, do not use the service.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'About Kautix'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Kautix is a cloud-based School Management System that helps schools manage students, parents, teachers, attendance, exams, communication and more.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'User accounts'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Users must provide accurate information and are responsible for activity under their accounts.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'School administrator responsibilities'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'School admins must manage access, maintain accurate student records, and comply with applicable laws when using Kautix.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Parent responsibilities'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Parents should maintain up-to-date contact info and use the portal responsibly.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Teacher responsibilities'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Teachers should use Kautix for grading, attendance and communication in a professional manner.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Acceptable use policy'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'No unlawful use, no harassment, no scraping, and no sharing of credentials.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Intellectual property'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Kautix owns the platform content. Users are granted a limited license to use the service.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Payments and subscriptions'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Paid features, billing, cancellations and refunds are handled per your subscription agreement.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Service availability'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'We aim for high availability but may have maintenance windows. We are not liable for downtime beyond our control.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Data ownership'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Schools retain ownership of their data. We process it on behalf of schools per our Privacy Policy.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Termination'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'We may suspend or terminate accounts for violations or inactivity.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Limitation of liability'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'To the maximum extent permitted, Kautix is not liable for indirect or consequential damages.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Governing law'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'These terms are governed by the laws of India.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Changes to terms'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'We may update these terms. Material changes will be communicated.')
+                    ),
+
+                    e('article', { className: 'bg-white p-6 rounded-lg shadow' },
+                        e('h3', { className: 'text-lg font-semibold mb-2' }, 'Contact information'),
+                        e('p', { className: 'text-sm text-gray-700' }, 'Contact: '), e('a', { href: 'mailto:legal@kautix.in', className: 'text-blue-600' }, 'legal@kautix.in')
+                    )
+                )
+            );
+        }
+
+        function Footer() {
+            return e('footer', { className: 'bg-white mt-12 border-t' },
+                e('div', { className: 'max-w-6xl mx-auto px-6 py-6 flex items-center justify-between' },
+                    e('div', null, e('span', { className: 'text-sm text-gray-600' }, '© ' + new Date().getFullYear() + ' Kautix')),
+                    e('div', null, e('a', { href: '/privacy-policy', className: 'text-sm text-gray-600 px-2' }, 'Privacy'), e('a', { href: '/terms', className: 'text-sm text-gray-600 px-2' }, 'Terms'))
+                )
+            );
+        }
+
+        function App() {
+            return e(React.Fragment, null, e(Nav()), e(Hero()), e(Content()), e(Footer()));
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(e(App));
+    </script>
+</body>
+
+</html>
