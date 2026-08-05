@@ -1,7 +1,7 @@
 <div align="center">
 
-<!-- Hero Banner -->
-<img src="assets/banner.svg" alt="Namit Raj - Software Engineer" />
+
+
 
 <!-- Animated Typing SVG -->
 <a href="https://github.com/vkmnamit">
