@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: var(--font-sans) !important;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-sans) !important;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent Apple/iOS default styling on inputs and buttons */
+input, textarea, select, button {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: inherit !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Page shell — use on every dashboard page root */
+.page-shell {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 6rem;
+}
+
+/* Shared full-width surface for dashboard pages. It fills the space beside the sidebar. */
+.dashboard-page {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+
+/* Responsive tables → card stack on mobile */
+@media (max-width: 639px) {
+  .mobile-edge {
+    margin-left: -0.75rem !important;
+    margin-right: -0.75rem !important;
+    width: calc(100% + 1.5rem) !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .responsive-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .responsive-table-wrap table.responsive-table {
+    min-width: 640px;
+  }
+
+  .mobile-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .mobile-card-list .desktop-only-table {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-card-list {
+    display: none !important;
+  }
+}
+
+/* Modal forms — scrollable on small screens */
+.dialog-scroll-body {
+  max-height: min(70vh, 600px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 0.25rem;
+}
+
+/* Touch-friendly controls */
+@media (max-width: 767px) {
+  button, [role="button"], select, input, textarea {
+    min-height: 44px;
+  }
+
+  input[type="date"], input[type="time"] {
+    width: 100%;
+  }
+}
+
+/* Remove forced black bolding globally */
+.font-black {
+  font-weight: 700 !important;
+  /* Cap at 700 instead of 900 */
+}
+
+.font-bold {
+  font-weight: 600 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+}
+
+p,
+span,
+div {
+  font-weight: 400;
+}

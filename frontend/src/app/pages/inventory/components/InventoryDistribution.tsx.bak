@@ -1,0 +1,194 @@
+import { useState, useEffect } from 'react';
+import { api } from '../../../../lib/api';
+import { Skeleton } from '../../../components/ui/skeleton';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../components/ui/select';
+import { Input } from '../../../components/ui/input';
+import { Button } from '../../../components/ui/button';
+import { Badge } from '../../../components/ui/badge';
+import { Search, CheckCircle, Clock, BookOpen } from 'lucide-react';
+import { toast } from 'sonner';
+
+export function InventoryDistribution() {
+  const [students, setStudents] = useState<any[]>([]);
+  const [selectedStudent, setSelectedStudent] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  
+  const [distributionData, setDistributionData] = useState<any>({ distribution: [], requiredItems: [] });
+
+  useEffect(() => {
+    api.getStudents().then((res: any) => {
+      setStudents(res.students || res || []);
+      setLoading(false);
+    }).catch(() => {
+      toast.error('Failed to load students');
+      setLoading(false);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (selectedStudent) {
+      loadStudentInventory(selectedStudent.id);
+    }
+  }, [selectedStudent]);
+
+  const loadStudentInventory = async (studentId: string) => {
+    try {
+      const res = await api.getStudentInventoryDistribution(studentId);
+      setDistributionData(res);
+    } catch (err) {
+      toast.error('Failed to load student inventory');
+    }
+  };
+
+  const handleIssue = async (itemId: string, academicYearId: string) => {
+    try {
+      await api.issueStudentInventoryItem(selectedStudent.id, {
+        item_id: itemId,
+        quantity: 1,
+        academic_year_id: academicYearId,
+        remarks: 'Issued via Desk'
+      });
+      toast.success('Item issued successfully');
+      loadStudentInventory(selectedStudent.id);
+    } catch (err: any) {
+      toast.error(err.response?.data?.error || 'Failed to issue item');
+    }
+  };
+
+  if (loading) return <Skeleton className="h-[500px] w-full rounded-2xl" />;
+
+  const filteredStudents = students.filter(s => 
+    s.first_name?.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    s.last_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    s.admission_number?.toLowerCase().includes(searchTerm.toLowerCase())
+  ).slice(0, 5);
+
+  const { distribution, requiredItems } = distributionData;
+
+  // Compute pending items (required but not in distribution)
+  const pendingItems = requiredItems.filter((req: any) => 
+    !distribution.some((d: any) => d.item_id === req.item_id && d.status !== 'returned')
+  );
+
+  return (
+    <div className="flex flex-col lg:flex-row gap-6">
+      {/* Sidebar: Search Student */}
+      <div className="lg:w-1/3 space-y-4">
+        <h3 className="font-semibold text-gray-900">Select Student</h3>
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <Input 
+            placeholder="Search by name or admission no..." 
+            value={searchTerm} 
+            onChange={e => setSearchTerm(e.target.value)} 
+            className="pl-9" 
+          />
+        </div>
+        <div className="border rounded-xl bg-white overflow-hidden shadow-sm">
+          {filteredStudents.map(student => (
+            <div 
+              key={student.id} 
+              onClick={() => setSelectedStudent(student)}
+              className={`p-3 border-b last:border-0 cursor-pointer hover:bg-orange-50 transition-colors ${selectedStudent?.id === student.id ? 'bg-orange-50 border-l-4 border-l-orange-600' : ''}`}
+            >
+              <div className="font-medium text-gray-900">{student.first_name} {student.last_name}</div>
+              <div className="text-xs text-gray-500">Adm: {student.admission_number || '-'} • Class: {student.section?.class?.name || 'N/A'}</div>
+            </div>
+          ))}
+          {searchTerm && filteredStudents.length === 0 && (
+            <div className="p-4 text-center text-sm text-gray-500">No students found.</div>
+          )}
+        </div>
+      </div>
+
+      {/* Main Panel: Distribution Desk */}
+      <div className="lg:w-2/3 border rounded-xl bg-white p-6 shadow-sm min-h-[400px]">
+        {!selectedStudent ? (
+          <div className="h-full flex flex-col items-center justify-center text-gray-400">
+            <BookOpen className="w-12 h-12 mb-2 opacity-50" />
+            <p>Select a student to view and issue inventory.</p>
+          </div>
+        ) : (
+          <div className="space-y-6">
+            <div className="border-b pb-4">
+              <h2 className="text-xl font-bold text-gray-900">{selectedStudent.first_name} {selectedStudent.last_name}</h2>
+              <p className="text-sm text-gray-500">Class: {selectedStudent.section?.class?.name} - {selectedStudent.section?.name}</p>
+            </div>
+
+            {/* Pending Items */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                <Clock className="w-5 h-5 text-amber-500" /> Pending Required Items
+              </h3>
+              {pendingItems.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {pendingItems.map((req: any) => (
+                    <div key={req.id} className="border border-amber-100 bg-amber-50 rounded-xl p-3 flex justify-between items-center">
+                      <div>
+                        <div className="font-medium text-gray-900">{req.school_inventory?.name}</div>
+                        <div className="text-xs text-amber-700">Required: {req.required_quantity}</div>
+                      </div>
+                      <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white" onClick={() => handleIssue(req.item_id, req.academic_year_id)}>
+                        Issue
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="p-4 bg-gray-50 rounded-xl text-sm text-gray-500 text-center border">
+                  No pending items. All required items have been issued!
+                </div>
+              )}
+            </div>
+
+            {/* Issued History */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-emerald-500" /> Current Possessions & History
+              </h3>
+              <div className="border rounded-xl overflow-hidden">
+                <table className="w-full text-left text-sm">
+                  <thead className="bg-gray-50 text-gray-600 font-medium">
+                    <tr>
+                      <th className="p-3">Item Name</th>
+                      <th className="p-3">Status</th>
+                      <th className="p-3">Date</th>
+                      <th className="p-3">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    {distribution.map((dist: any) => (
+                      <tr key={dist.id}>
+                        <td className="p-3 font-medium text-gray-900">{dist.school_inventory?.name}</td>
+                        <td className="p-3">
+                          <Badge variant={dist.status === 'issued' ? 'success' : dist.status === 'returned' ? 'default' : 'destructive'}>
+                            {dist.status}
+                          </Badge>
+                        </td>
+                        <td className="p-3 text-gray-500">
+                          {dist.issue_date ? new Date(dist.issue_date).toLocaleDateString() : '-'}
+                        </td>
+                        <td className="p-3">
+                          {dist.status === 'issued' && (
+                            <Button variant="outline" size="sm" className="text-xs h-7">Return</Button>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                    {distribution.length === 0 && (
+                      <tr>
+                        <td colSpan={4} className="p-6 text-center text-gray-500">No inventory history found.</td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
