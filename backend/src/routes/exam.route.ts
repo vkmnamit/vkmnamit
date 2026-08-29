@@ -1,5 +1,5 @@
 import express from 'express';
-import { createExam, getExams, submitResults, getExamResults, getReportCard, publishResults, getExamTypes, updateExam, deleteExam, getStudentAnalytics, getStudentsForMarksEntry, notifyPendingMarks } from '../controllers/exam.controller';
+import { createExam, getExams, submitResults, getExamResults, getReportCard, publishResults, getExamTypes, updateExam, deleteExam, getStudentAnalytics, getStudentsForMarksEntry, notifyPendingMarks, submitExamAnswer } from '../controllers/exam.controller';
 import { authMiddleware, roleGuard } from '../middleware/auth.middleware';
 
 const router = express.Router();
@@ -19,5 +19,6 @@ router.get('/report-card/:studentId', getReportCard);
 router.get('/analytics/:studentId', getStudentAnalytics);
 router.post('/publish', roleGuard('admin', 'teacher'), publishResults);
 router.post('/notify-pending', roleGuard('admin'), notifyPendingMarks);
+router.post('/submit-answer', roleGuard('student'), submitExamAnswer);
 
 export default router;

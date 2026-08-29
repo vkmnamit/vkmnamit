@@ -1174,3 +1174,43 @@ export async function notifyPendingMarks(req: AuthenticatedRequest, res: Respons
     return res.status(500).json({ error: 'Failed to send notifications' });
   }
 }
+
+// Submit exam answer (student upload)
+export async function submitExamAnswer(req: AuthenticatedRequest, res: Response) {
+  try {
+    const { examId, contentUrl } = req.body;
+
+    if (req.user!.role !== 'student') {
+      return res.status(403).json({ error: 'Only students can submit exam answers' });
+    }
+
+    const { data: studentRecord } = await supabaseAdmin
+      .from('students')
+      .select('id')
+      .eq('user_id', req.user!.id)
+      .single();
+
+    if (!studentRecord) {
+      return res.status(403).json({ error: 'No student profile linked to this account' });
+    }
+
+    const { data, error } = await supabaseAdmin
+      .from('exam_results')
+      .upsert({
+        school_id: req.user!.school_id,
+        exam_id: examId,
+        student_id: studentRecord.id,
+        content_url: contentUrl,
+        submitted_at: new Date().toISOString(),
+        marks_obtained: -1,
+        grade: '-'
+      }, { onConflict: 'exam_id,student_id' })
+      .select()
+      .single();
+
+    if (error) return res.status(400).json({ error: error.message });
+    return res.status(201).json(data);
+  } catch (error: any) {
+    return res.status(500).json({ error: 'Failed to submit exam answer' });
+  }
+}
