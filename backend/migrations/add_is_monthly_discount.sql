@@ -1,1 +1,0 @@
-ALTER TABLE fee_discounts ADD COLUMN IF NOT EXISTS is_monthly BOOLEAN DEFAULT false;
