@@ -37,7 +37,7 @@ const StudentFeePage = lazy(() => import('./pages/fees/StudentFeePage').then(m =
 const ExamsPage = lazy(() => import('./pages/exams/ExamsPage').then(m => ({ default: m.ExamsPage })));
 const MarksManagementPage = lazy(() => import('./pages/exams/MarksManagementPage').then(m => ({ default: m.MarksManagementPage })));
 const StudentResultsPage = lazy(() => import('./pages/academic/StudentResultsPage').then(m => ({ default: m.StudentResultsPage })));
-const ReportCardPage = lazy(() => import('./pages/academic/ReportCardPage').then(m => ({ default: m.ReportCardPage })));
+
 const CommunicationPage = lazy(() => import('./pages/communication/CommunicationPage').then(m => ({ default: m.CommunicationPage })));
 const QueriesPage = lazy(() => import('./pages/communication/QueriesPage').then(m => ({ default: m.QueriesPage })));
 const TeachersPage = lazy(() => import('./pages/teachers/TeachersPage').then(m => ({ default: m.TeachersPage })));
@@ -299,16 +299,6 @@ export const router = createBrowserRouter([
           {
             index: true,
             element: S(<StudentResultsPage />),
-          },
-        ],
-      },
-      {
-        path: 'report-card',
-        element: <DashboardLayout />,
-        children: [
-          {
-            index: true,
-            element: S(<ReportCardPage />),
           },
         ],
       },
