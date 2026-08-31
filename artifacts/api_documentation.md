@@ -771,3 +771,22 @@ Every fee action auto-fires **In-App** notifications (mandatory). Optional chann
 | SMS | `"notifySms": true` |
 
 Notification events: `fee_generated`, `fee_reminder`, `payment_received`, `partial_payment`, `fee_overdue`, `receipt_generated`
+---
+
+## Receipt & Bill Number Scheme
+
+Format: **`{SchoolShortName}{YY}{Month}{Serial}`** — e.g. Gyananda Nation Academy, Aug 2026, first receipt of the month => `GNA2681` (`GNA` + `26` + `8` + `1`).
+
+- The short name is derived from the school name (first letters of each word, up to 4) and stored on `schools.short_name` (migration `backend/migrations/receipt_number_scheme.sql`).
+- Serials are per school + per month and reset every month (counter table `transaction_counters`).
+- Fee receipts use `POST /fees/collect` / `POST /fees/bulk-collect` and call RPC `generate_receipt_number(p_school_id)`.
+
+### Expense Bills (payment section for school expenses)
+
+Bills can be created for any school expense (inventory, vendors, anyone — amount, reason, to whom) and appear in the **Bills** section under Fees (`/fees/bills`).
+
+| Endpoint | Description |
+|---|---|
+| `GET /finance/expenses` | List all expense bills (with `bill_number`, `payee`, `reason`) |
+| `POST /finance/expenses` | Create a bill. Body: `{ title?, amount, category, paymentMethod, remarks?, date?, payee?, reason?, status? ('pending'\|'paid') }` — auto-generates `bill_number` via `generate_bill_number(p_school_id)` |
+| `PATCH /finance/expenses/:id` | Mark paid / update bill. Body: `{ status, paymentMethod?, paidDate? }` |
